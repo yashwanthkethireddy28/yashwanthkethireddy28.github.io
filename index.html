@@ -1,87 +1,253 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Interactive Navigation</title>
-    <style>
-      /* General Body Styles */
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f9;
-        color: #333;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kethireddy yeshwanth reddy - Portfolio</title>
+  <link rel="icon" type="image/x-icon" href="assets/images/ball.png">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
 
-      /* Title Styling */
-      #divTitle {
-        text-align: center;
-        margin-top: 20px;
-        font-size: 24px;
-        color: #4a90e2;
-      }
+    body {
+      background-color: #0a0a0a;
+      color: white;
+    }
 
-      /* Style the links in a visually appealing way */
-      .page {
-        background-color: #4a90e2; /* Blue color */
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        display: inline-block;
-        margin: 5px;
-        text-align: center;
-        line-height: 40px;
-        color: white;
-        font-size: 16px;
-        font-weight: bold;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-      }
+    .container {
+      width: 85%;
+      margin: auto;
+    }
 
-      .page:hover {
-        background-color: #0073e6; /* Darker blue on hover */
-        transform: scale(1.1);
-      }
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      background: rgba(0, 0, 0, 0.8);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      padding: 15px 10%;
+    }
 
-      .page:active {
-        transform: scale(1.05); /* Slightly reduce size on click */
-      }
+    .header-row h1 {
+      font-size: 26px;
+      color: #ff6600;
+      font-weight: bold;
+    }
 
-      /* Styling for the iframe */
-      iframe {
-        margin: 20px auto;
-        display: block;
-        width: 90%;
-        max-width: 1200px;
-        height: 600px;
-        border: none;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
+    .header-row ul {
+      list-style: none;
+      display: flex;
+    }
 
-      /* Section separator */
-      hr {
-        border: 0;
-        border-top: 2px solid #ccc;
-        margin: 20px 0;
-      }
-    </style>
-  </head>
-  <body>
-    <div>
-      <div id="divTitle"></div>
-      <hr />
-      <div>
-        <iframe name="tempFrm" src="temp1.html"></iframe>
+    .header-row ul li {
+      margin-left: 25px;
+    }
+
+    .header-row ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    .header-row ul li a:hover {
+      color: #ff6600;
+    }
+
+    #home {
+      height: 100vh;
+      background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)), url('assets/images/home-bg.jpg') center/cover;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    #home h1 {
+      font-size: 45px;
+      margin-bottom: 10px;
+      color: #ff6600;
+    }
+
+    #home p {
+      font-size: 18px;
+      max-width: 700px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      background: #ff6600;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      margin: 15px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #cc5500;
+    }
+
+    .section {
+      padding: 80px 10%;
+      text-align: center;
+    }
+
+    .box {
+      margin: 20px;
+      padding: 25px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header-row">
+      <h1>Kethireddy yeshwanth reddy</h1>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div id="home">
+      <h1>Kethireddy yeshwanth reddy</h1>
+      <p>Full-Stack Developer | Passionate About Building Scalable and Modern Web Applications.</p>
+      <button class="btn" onclick="window.open('https://www.linkedin.com/in/your-profile', '_blank')" 
+      style="background-color: orange; color: white; padding: 12px 24px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer; transition: background 0.3s ease, transform 0.2s ease;" 
+      onmouseover="this.style.backgroundColor='rebeccapurple'; this.style.transform='scale(1.05)';" 
+      onmouseout="this.style.backgroundColor='orange'; this.style.transform='scale(1)';">
+        LinkedIn
+      </button>
+      
+      <button class="btn" onclick="window.open('your-resume.pdf', '_blank')" 
+      style="background-color: orange; color: white; padding: 12px 24px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer; transition: background 0.3s ease, transform 0.2s ease;" 
+      onmouseover="this.style.backgroundColor='rebeccapurple'; this.style.transform='scale(1.05)';" 
+      onmouseout="this.style.backgroundColor='orange'; this.style.transform='scale(1)';">
+        Resume
+      </button>
+      
+    </div>
+
+   
+    <div id="projects" class="row">
+        <h1>Projects</h1>
+        <div class="box">
+          <h3>Project 1</h3>
+          <a href="p1.html">View Project</a>
+          <p>Online shopping app.</p>
+        </div>
+      </div>
+  
+      
+      <div id=" " class="row">
+          <div class="box">
+            <h3>Project 2</h3>
+            <a href="Game.html">View Project</a>
+            <p>Fun to play</p>
+          </div>
+        </div>
+    
+        <div id=" " class="row">
+          <div class="box">
+            <h3>Project 3</h3>
+            <a href="bank.html">View Project</a>
+            <p>HDFC bank.</p>
+          </div>
+        </div>
+
+        <div id=" " class="row">
+            <div class="box">
+              <h3>Project 4</h3>
+              <a href="Social Media.html">View Project</a>
+              <p>Social Media.</p>
+            </div>
+          </div>
+    
+  
+      
+
+
+
+
+    <div id="services" class="section">
+      <h1>Services</h1>
+      <div class="box">
+        <h3>Web App Development</h3>
+        <p>"Crafting seamless, scalable, and high-performance web applications that blend innovation with user-centric design."</p>
+      </div>
+      <div class="box">
+        <h3>Backend Solutions</h3>
+        <p>"Robust and scalable backend solutions ensuring seamless performance, security, and efficiency for modern applications."</p>
+      </div>
+      <div class="box">
+        <h3>Mobile App Development</h3>
+        <p>"Transforming ideas into seamless, high-performance mobile applications with intuitive design and robust functionality." </p>
       </div>
     </div>
-    <script>
-      let str = "<b>Navigate to Temp Files:</b><br />";
-      for (let i = 1; i <= 30; i++) {
-        str += `<a href="temp${i}.html" target="tempFrm" class="page">${i}</a>`;
-      }
-      document.getElementById("divTitle").innerHTML = str;
-      console.log(str);
-    </script>
-  </body>
+
+
+
+    <div id="About Me" class="section">
+        <h1>About Me</h1>
+        <div class="box">
+          <h3>A Full Stack Developer</h3>
+          <p>"I'm a passionate Full-Stack Developer specializing in Python, SQL, and HTML. I build dynamic, scalable web applications with clean, efficient code. From front-end design to back-end logic, I create seamless digital experiences. Always learning, always innovating!"</p>
+        </div>
+
+        <h1>My Skills</h1>
+        <div class="skills-container">
+            <div class="skill">
+                <img src="images/th.jpg" alt="MySQL">
+                <h3>MySQL</h3>
+            </div>
+            <div class="skill">
+                <img src="images/Python-Logo.png" alt="Python">
+                <h3>Python</h3>
+            </div>
+            <div class="skill">
+                <img src="images/th (1).jpg" alt="HTML">
+
+                <h3>Html</h3>
+            </div>
+
+        
+      </div>
+
+    <div id="contact" class="section">
+      <h1>Contact</h1>
+      <p>Email: yeshwanth@example.com</p>
+      <p>Phone: +91 343 445 6789</p>
+    </div>
+
+    <div class="footer">@copyright 2024. All rights reserved.</div>
+  </div>
+</body>
 </html>
